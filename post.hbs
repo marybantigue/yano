@@ -1,0 +1,29 @@
+
+{{!< default}}
+
+{{#post}}
+<div>
+  <article class="post-article">
+    <h1 class="post-title">{{title}}</h1>
+    <div class="post-details">
+      <p class="date"><i class="fas fa-calendar-alt"></i>{{date format="D MMMM YYYY"}}</p>
+      <p class="tags"><i class="fas fa-tags"></i> {{tags}}</p>
+    </div>
+    <div class="post-body">
+      {{content}}
+    </div>
+  </article>
+
+  <div class="post-list">
+    {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
+    {{#next_post}}
+        {{> "post-preview"}}
+    {{/next_post}}
+
+    {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
+    {{#prev_post}}
+        {{> "post-preview"}}
+    {{/prev_post}}
+  </div>
+</div>
+{{/post}}

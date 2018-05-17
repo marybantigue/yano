@@ -1,0 +1,34 @@
+{{!< default}}
+<section id="sidebar">
+  {{#if @blog.cover_image}}
+  <img src={{@blog.cover_image}} class="cover-image" />
+  {{/if}}
+  <button type="button" name="button"  class="closeBtn"><i class="fas fa-times"></i>
+  </button>
+  <div class="logo">
+    <a href="{{@blog.url}}">MARY<span>VENTURES</span></a>
+  </div>
+  <div class="about">
+    <div class="avatar">
+      <img src="{{asset "images/avatar.jpg"}}"/>
+    </div>
+    <p class="bio">
+      {{@blog.description}}
+    </p>
+    <div class="social">
+      {{#if @blog.twitter}}
+        <a href="https://twitter.com"  href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+      {{/if}}
+      <a href="https://github.com"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="tags">
+    {{#if @blog.navigation}}
+        {{navigation}}
+    {{/if}}
+  </div>
+  <div class="copyright">
+    © MaryBantigue2018
+  </div>
+</section>
